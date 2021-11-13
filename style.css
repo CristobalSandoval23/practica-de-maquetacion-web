@@ -1,0 +1,74 @@
+html{
+    box-sizing: border-box;
+}
+*, *::after,*::before{
+    box-sizing: inherit;
+}
+body{
+    background-color: red;
+    margin: 0;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+.caja{
+    width: auto;
+    height: 300px;
+}
+.container-box{
+    display: inline-flex;
+}
+.content-box-img{
+    width: 200px;
+    height: 300px;
+    overflow-y: hidden;
+}
+.elementos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.elementos img{
+    position: absolute;
+    margin-top: 300px;
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+}
+.elementos h2, .elementos a{
+    position: absolute;
+    margin-top: 300px;
+    z-index: 1;
+}
+.elementos a{
+    margin-bottom: -40px;
+}
+.front-inicial{
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) translateY(0) scale(1);
+    z-index: 2;
+    transition: all 0.7s cubic-bezier(0.11, 0.6, 0.24, 0.89);
+}
+.front-final{
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateY(-150%) scale(0);
+    transition: all 0.5s cubic-bezier(0.63, 0.07, 0.78,0.55);
+    z-index: 1;
+}
+.back-inicial{
+    transform-style: preserve-3d;
+    transform: rotateX(-90deg) translateY(150%) scale(0);
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.63, 0.07, 0.78,0.55);
+    margin-top: 400px;
+}
+.back-final{
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) translateY(0) scale(1);
+    transition: all 0.7s cubic-bezier(0.11, 0.6, 0.24, 0.89);
+    z-index: 2;
+}
+
+/* TODO mejorar el codigo para evitar que se desalineen los elementos */
